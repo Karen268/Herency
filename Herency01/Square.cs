@@ -1,0 +1,30 @@
+﻿namespace Herency01;
+
+public class Square:GeometricFigure
+{
+    private double _a;
+
+    // Properties
+    public double A
+    { get => _a;
+      set => _a = ValidateA(value);
+    }
+    //Constructors
+    public Square(string name, double a):base(name) 
+    {
+        A = a;
+    }
+    // Methods 
+    public override double GetArea() => Math.Pow(A, 2);
+
+    public override double GetPerimeter() => 4 * A;
+
+    private double ValidateA(double a)
+    {
+        if (a < 0)
+        {
+            throw new ArgumentException("The area of the Square is incorrect");
+        }
+        return a;
+    }
+}
