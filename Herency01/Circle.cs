@@ -12,9 +12,10 @@ public class Circle:GeometricFigure
     }
 
     // Constructor
-    public Circle(string name, double r):base(name)
+    public Circle(string name, double r)
     {
         R= r;
+        Name = name;
     }
     //Methods
     public override double GetArea()=> Math.PI * Math.Pow(R, 2);
@@ -24,7 +25,7 @@ public class Circle:GeometricFigure
    
     private double ValidateR(double r)
     {
-        if (r < 0)
+        if (r <= 0)
         {
             throw new ArgumentException("The radius is incorrect");
         }

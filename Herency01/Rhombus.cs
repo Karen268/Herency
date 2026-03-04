@@ -29,7 +29,7 @@ public class Rhombus:Square
     public override double GetPerimeter() => base.GetPerimeter();
     private double ValidateD1(double d1)
     {
-        if (d1 < 0)
+        if (d1 <= 0)
         {
             throw new ArgumentException("The diagonal D1 of the Rhombus is incorrect");
         }
@@ -37,7 +37,7 @@ public class Rhombus:Square
     }
     private double ValidateD2(double d2)
     {
-        if (d2 > 0)
+        if (d2 <= 0)
         {
             throw new ArgumentException("The diagonal D2 of the Rhombus is incorrect");
         }

@@ -10,9 +10,10 @@ public class Square:GeometricFigure
       set => _a = ValidateA(value);
     }
     //Constructors
-    public Square(string name, double a):base(name) 
+    public Square(string name, double a)
     {
         A = a;
+        Name = name;
     }
     // Methods 
     public override double GetArea() => Math.Pow(A, 2);
@@ -21,7 +22,7 @@ public class Square:GeometricFigure
 
     private double ValidateA(double a)
     {
-        if (a < 0)
+        if (a <= 0)
         {
             throw new ArgumentException("The area of the Square is incorrect");
         }
